@@ -1,30 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-   long long x , y , z;
+int main()
+{
+   long long x, y, z;
    cin >> x >> y >> z;
-
-   
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// helloooo
 
 //     double x; cin >> x;
 
@@ -49,41 +32,8 @@ int main() {
 //    {
 //       cout << "Out of Intervals." ;
 //    }
-   
-   
+
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //  long long n; cin >> n;
 
@@ -97,26 +47,12 @@ int main() {
 //  cout << month << " month" << endl;
 //  cout << days << " days" << endl;
 
-
-   
 //  }
- 
- 
 
-
-  
-
- 
 //  cout  <<  days << " days" << endl;
-  
 
-
-
-    
 //     string s;  cin >> s;
 
-
-     
 //      for (auto i :s)
 //      {
 //         i= tolower(i);
@@ -124,38 +60,13 @@ int main() {
 //        if (!(i == 'a' || i ==  'e' || i == 'i' || i == 'o' || i=='u'|| i == 'y'))
 //        {
 //         cout << '.' << i ;
-        
+
 //        }
-      
+
 //      }
-  
+
 //      cout << endl;
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // {
 //   string s ,t; cin >>s >> t;
@@ -201,18 +112,6 @@ int main() {
 
 //     }
 
-
-
-
-
-
-
-
-
-
-
-
-
 //     long double x , y; cin >> x >> y;
 //     if (x==0 && y==0)
 //     {
@@ -248,15 +147,6 @@ int main() {
 
 // }
 
-
-
-
-
-
-
-
-
-
 //  long long x ; cin >> x;
 
 //   while (x >= 10 )
@@ -274,12 +164,6 @@ int main() {
 //   }
 
 // }
-
-
-
-
-
-
 
 //  long long a,b; cin >> a >> b;
 
