@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="firstName" placeholder="Max" value="Max"/>
+<input type="text" id="lastName" placeholder="Musterman" value="Musterman"/>
+<input type="text" id="fullName" placeholder="full name" readonly/>
+<button type="button" id="button">Verify Code</button>
+</body>
+
+<script>
+    const button = document.getElementById('button');
+button.addEventListener('click' , () => {
+  // type in your code here
+   const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            // Combine the first and last names
+            const fullName = firstName + ' ' + lastName;
+            // Insert the full name into the third input field
+            document.getElementById('fullName').value = fullName;
+});
+
+</script>
+</html>
