@@ -1,13 +1,207 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
+bool prime(int n)
+
 {
-   long long x, y, z;
-   cin >> x >> y >> z;
+  for (int i =2; i*i <=n-1; i++)
+  
+    if(n%i==0) return false;
+    return n >1;
+  
 }
 
-// helloooo
+
+void sieve (int n){
+  bool primes[n+1];
+  fill(primes,primes+n+1,true);
+
+  primes[0] = primes[1] = false;
+
+  for(int i =2; i <=n; i++)
+  {
+    if (primes[i]) cout << i << endl; 
+    { 
+      for (int j = i*i; j <= n; j+= i)
+      {
+        primes[j] = false;
+      }
+      
+    }
+    
+  }
+}
+
+
+void trial(int n)
+{
+for (int i = 2; i*i <= n; i++)
+{
+ while (n%i==0)
+ {
+  cout << i << endl;
+  n /= i;
+ }
+ 
+}
+if(n != 1 )
+{
+  cout << n << endl;
+}
+
+}
+
+
+
+
+int main() {
+int n; cin >> n;
+trial(n);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// char c ; cin>> c;
+// if(char(c)==122)
+// {
+//   cout << "a"<< endl;
+// }
+// else
+// cout << char(c+1);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+//   long long x , y ,k; cin >> x >> y >> k;
+
+//   if (x % k==0 && y % k==0)
+//   {
+//     cout << "Both" << endl;
+//   }
+//   else if (x % k==0 && y % k !=0)
+//   cout << "Memo" << endl;
+//   else if (x % k !=0 && y % k ==0)
+//   cout << "Momo" << endl;
+//   else if (x % k !=0 && y % k !=0 )
+//   cout <<"No One" << endl;
+  
+// }
+
+// long long x, p; cin >> x >> p;
+// long double price = 1-(x*1.0/100);
+
+
+
+
+
+// cout  << fixed << setprecision(2) << float(p/price);
+
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+// long double x; cin >> x;
+// if(x*1== int(x))
+// {
+//   cout << "int " << x;
+// }
+// else
+// { 
+//   cout << "float " << int(x) << " " <<  fixed << setprecision(3) <<  float(x)-int(x); 
+// }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     long long l1, r1, l2, r2;
+//     cin >> l1 >> r1 >> l2 >> r2;
+
+//     // If the intervals overlap
+//     if (r1>= l2 && r2 >=l1) {
+//         cout << max(l1,l2)<< " " << min(r1,r2)  // Print the overlapping range
+//     } else {
+//         cout << -1;  // No overlap
+//     }
+
+//     return 0;
+// }
+
+
+
+
+
+
+// int main() {
+//     long long a, b, c, d;
+//     cin >> a >> b >> c >> d;
+
+//       long long result = (((a % 100) * (b % 100) % 100) * (c % 100) % 100) * (d % 100) % 100;
+    
+    
+//     cout << setw(2) << setfill('0') << result;
+// }
+
+
+
+
+// {
+//     long long a, b, c, d;
+//     cin >> a >> b >> c >> d;
+
+//     if ((b * log(a)) > (d * log(c))) 
+//         cout << "YES";
+//     else if ((b * log(a)) <= (d * log(c))) 
+//         cout << "NO";
+// }
+
+    
+
+
 
 //     double x; cin >> x;
 
