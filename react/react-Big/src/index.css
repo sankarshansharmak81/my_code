@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(115, 56, 85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+h1{
+font-family: sans-serif;
+border: 2px solid #ccc;
+border-radius: 20px;
+padding: 20px;
+}
