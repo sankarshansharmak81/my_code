@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>3 Years — For My Best Friend</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ---------- GLOBAL ---------- */
+  :root{
+    --bg1:#ffedf7; --bg2:#e8ddff; --accent:#ff4f9d; --deep:#5c2fa0;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#222;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+
+  /* Intro full-screen */
+  #intro {
+    position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(180deg, rgba(20,10,30,0.95), rgba(40,20,60,0.85));
+    z-index:9999; flex-direction:column; gap:10px; color:white;
+    animation:introShow 3.6s ease forwards;
+  }
+  @keyframes introShow {
+    0%{opacity:1}
+    65%{opacity:1}
+    100%{opacity:0; pointer-events:none; display:none}
+  }
+  .intro-title { font-size:36px; font-weight:900; letter-spacing:0.6px; text-shadow:0 0 22px rgba(255,110,180,0.18); }
+  .intro-sub { opacity:0.9; }
+
+  /* header */
+  header{ text-align:center; padding:84px 22px 20px; }
+  h1{ font-size:52px; margin:0; color:var(--deep); text-shadow:0 0 12px rgba(220,140,255,0.12);}
+  p.lead{ max-width:820px; margin:14px auto; color:#333; font-size:18px;}
+
+  /* container boxes */
+  .wrap{ max-width:1080px; margin:28px auto; padding:0 18px; }
+  .box{
+    background:rgba(255,255,255,0.85);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 16px 40px rgba(20,10,40,0.08);
+    backdrop-filter: blur(6px);
+    margin-bottom:20px;
+    transition:transform .28s ease;
+  }
+  .box:hover{ transform:translateY(-6px); }
+
+  h2{ margin:0 0 8px 0; color:var(--deep); font-size:20px; font-weight:700; text-shadow:0 0 12px rgba(255,110,180,0.06); }
+
+  /* gallery */
+  .gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:12px; }
+  .gallery img{ width:100%; height:160px; object-fit:cover; border-radius:12px; transition:transform .32s ease, box-shadow .32s; box-shadow:0 8px 20px rgba(20,10,40,0.06);}
+  .gallery img:hover{ transform:scale(1.06); box-shadow:0 18px 40px rgba(20,10,40,0.12); }
+
+  /* timeline */
+  .timeline{ margin-top:12px; }
+  .event{ padding-left:18px; border-left:4px solid rgba(255,79,157,0.9); margin:12px 0; }
+  .event h3{ margin:0; font-size:16px; color:var(--deep); }
+  .event p{ margin:6px 0 0; color:#444; font-size:14px; }
+
+  /* envelope */
+  .envelopeWrap{ display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
+  .envelope{
+    width:240px; height:150px; background:linear-gradient(135deg,#ff7eb3,#b28bff); border-radius:14px; display:flex;
+    align-items:center; justify-content:center; color:white; font-weight:700; cursor:pointer; position:relative;
+    box-shadow:0 20px 40px rgba(120,30,150,0.12); transform:translateY(0); transition:transform .3s ease;
+  }
+  .envelope:active{ transform:translateY(4px) scale(.995); }
+  .letterText{ display:none; margin-top:12px; color:#222; line-height:1.6; font-size:15px; }
+
+  /* song embed area (with overlay play) */
+  .videoWrap{ position:relative; border-radius:12px; overflow:hidden; background:#000; aspect-ratio:16/9; }
+  .videoThumb{ width:100%; height:100%; object-fit:cover; display:block; filter:brightness(.55); }
+  .playOverlay{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer;
+    background:linear-gradient(0deg, rgba(0,0,0,0.22), rgba(0,0,0,0.12));
+  }
+  .playBtn{
+    width:96px; height:96px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,#ff6fb0,#8a5bff); box-shadow:0 18px 40px rgba(120,40,150,0.28);
+    color:white; font-size:32px; border:none;
+  }
+  .videoExplain{ font-size:13px; color:#333; margin-top:8px; text-align:center; }
+
+  /* sparkle + trail hearts */
+  .sparkle{ position:fixed; width:6px; height:6px; background:white; border-radius:50%; pointer-events:none; box-shadow:0 0 8px white; animation:spark .9s linear forwards; }
+  @keyframes spark{ from{opacity:1; transform:scale(1);} to{opacity:0; transform:scale(0);} }
+  .trail{ position:fixed; pointer-events:none; transform:translate(-50%,-50%); font-size:20px; color:var(--accent); animation:pop 0.95s forwards; }
+  @keyframes pop{ 0%{opacity:1; transform:scale(1);} 100%{opacity:0; transform:scale(2);} }
+
+  /* neon headings */
+  .neon{ color:white; display:inline-block; padding:6px 12px; border-radius:8px; background:linear-gradient(90deg, rgba(255,110,180,0.12), rgba(140,90,255,0.12)); box-shadow:0 6px 30px rgba(140,90,255,0.08); }
+
+  /* responsive */
+  @media (max-width:720px){
+    h1{ font-size:36px; } .gallery{ grid-template-columns:1fr; } .envelope{ width:100%; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="intro-title">Three Years • A whole lifetime of little moments</div>
+  <div class="intro-sub">For my best friend — you make everything better.</div>
+</div>
+
+<header>
+  <h1>3 Years of Us 💖</h1>
+  <p class="lead">We met on <strong>5 May 2023</strong>. What started as a hello became the most important story of my life. This page is for you — every laugh, every fight, every quiet night, every big day.</p>
+</header>
+
+<div class="wrap">
+
+  <!-- MESSAGE -->
+  <div class="box">
+    <h2 class="neon">A Letter — Read slow, please</h2>
+    <p style="margin-top:10px; color:#333; font-size:15px;">
+      Hey —  
+      I keep trying to figure out how to say all of this without sounding like I'm reading from a movie script. So I'll keep it simple: meeting you on <strong>5 May 2023</strong> was the kind of small, ordinary miracle I didn't know I needed. You walked into my life like sunshine through a cracked window  warm, unexpected, and everything brightened.
+      <br><br>
+      In these three years you taught me how to laugh louder, to love braver, and to be kinder to myself. We've been strangers who learned to share secrets; besties who ate instant noodles at 2 AM; lovers who wrote next chapters together; besties again who kept the comfort, times apart that taught us how much we mean to each other; and then back to besties stronger, softer, and more real.
+      <br><br>
+      If I could promise you only one thing: I will always come back. For the late-night talks, the dumb memes, the quiet support, the epic chaos, and for the steady safe place you are. Three years is a beautiful start  I want a thousand more with you.
+      <br><br>
+      — with all my heart
+    </p>
+  </div>
+
+  <div class="box">
+  <h2 class="neon">Our Song — "Here's Your Perfect" by Jamie Miller</h2>
+
+  <!-- Guaranteed working video player -->
+  <div class="videoWrap" id="ytPlayer" style="position:relative; border-radius:12px; overflow:hidden; background:black; aspect-ratio:16/9;">
+    
+    <!-- Thumbnail Preview -->
+    <img src="https://i.ytimg.com/vi/cRi-x2r88no/maxresdefault.jpg" 
+         style="width:100%; height:100%; object-fit:cover; filter:brightness(0.55);" />
+
+    <!-- Click to Play Button -->
+    <div id="playBTN" 
+         style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+      <div style="
+        width:90px; height:90px; border-radius:50%;
+        background:linear-gradient(135deg,#ff6fb0,#8a5bff);
+        display:flex; align-items:center; justify-content:center;
+        font-size:32px; color:white;
+        box-shadow:0 12px 32px rgba(120,40,150,0.45);
+      ">
+        ▶
+      </div>
+    </div>
+
+  </div>
+
+  <p class="videoExplain">
+    Tap once to start the official music video.  
+    (Browsers block autoplay with sound — so click is required.)
+  </p>
+</div>
+
+<script>
+  // When user clicks, replace thumbnail with iframe and autoplay
+  document.getElementById("playBTN").onclick = function () {
+    let player = document.getElementById("ytPlayer");
+    player.innerHTML = `
+      <iframe width="100%" height="100%" 
+        src="https://www.youtube.com/embed/cRi-x2r88no?autoplay=1&rel=0&modestbranding=1&playsinline=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    `;
+  }
+</script>
+
+
+  <!-- ENVELOPE -->
+  <div class="box">
+    <h2 class="neon">Open the envelope — click to reveal</h2>
+    <div class="envelopeWrap">
+      <div class="envelope" onclick="toggleLetter()">
+        <div style="text-align:center;">
+          <div style="font-size:20px;">OPEN</div>
+          <div style="font-size:12px; opacity:0.92; margin-top:6px;">(click me)</div>
+        </div>
+      </div>
+
+      <div style="flex:1;">
+        <div class="letterText" id="letterText">
+          <strong>Dear you,</strong><br><br>
+          I remember the nervous hello, the awkward first jokes, and how quickly the walls came down. You have been my echo and my mirror — cheering my wins and steady through my storms. I cherish how comfortably you hold silence and how loudly you celebrate me. You are home, even when we were strangers. Thank you for staying, for returning, for loving me imperfectly and perfectly.
+          <br><br>
+          Always yours.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- TIMELINE -->
+  <div class="box">
+    <h2 class="neon">Our story — how we changed</h2>
+    <div class="timeline">
+      <div class="event">
+        <h3>5 May 2023 — Strangers</h3>
+        <p>We said hello for the first time , in a game .</p>
+      </div>
+
+      <div class="event">
+        <h3> august 2023 — Besties</h3>
+        <p>mwahaha we met again and become so close.</p>
+      </div>
+
+      <div class="event">
+        <h3>Late 2023 — Lovers</h3>
+        <p>We crossed the line that felt right, wrote secret notes to each other, and learned a new kind of closeness.</p>
+      </div>
+
+      <div class="event">
+        <h3>Early 2024 — Besties again</h3>
+        <p>We chose honesty over ego, kept the warmth and learned to be friends with history  love changed shape but stayed true.</p>
+      </div>
+
+      <div class="event">
+        <h3>Mid 2024 — A strange season</h3>
+        <p>Distance and confusion came likewe grew quiet and learned how fragile things can feel. But the core remained.</p>
+      </div>
+
+      <div class="event">
+        <h3>Late 2024 — Besties stronger</h3>
+        <p>We found our way back mwahhaha smarter, softer, with better jokes and braver hearts.</p>
+      </div>
+
+      <div class="event">
+        <h3>Today,, Friends for life</h3>
+        <p>Three years in, and the title doesn’t matter as much as what we are, a home, a safe place, and the kind of love that keeps showing up.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer style="text-align:center; padding:26px 12px; color:#444;">
+  Made with all the glowy pixels and more — for our three years. 💖
+</footer>
+
+<!-- sparkles + heart trail containers (will be generated) -->
+<script>
+/* ---------- VIDEO PLAY (works around autoplay blocking) ---------- */
+/* Official Jamie Miller video id for "Here's Your Perfect": cRi-x2r88no (official upload). */
+function playVideo(){
+  const wrap = document.getElementById('videoWrap');
+  // create iframe with allow and autoplay param
+  const iframe = document.createElement('iframe');
+  // embed the official video id, add autoplay=1 AND modestbranding, rel=0 for cleaner look
+  iframe.src = "https://www.youtube.com/embed/cRi-x2r88no?autoplay=1&rel=0&modestbranding=1";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  iframe.frameBorder = "0";
+  iframe.width = "100%";
+  iframe.height = "100%";
+  iframe.allowFullscreen = true;
+  // replace contents
+  wrap.innerHTML = '';
+  wrap.appendChild(iframe);
+}
+
+/* ---------- ENVELOPE TOGGLE ---------- */
+function toggleLetter(){
+  const L = document.getElementById('letterText');
+  if(!L) return;
+  L.style.display = (L.style.display === 'block') ? 'none' : 'block';
+}
+
+/* ---------- HEART TRAIL ---------- */
+document.addEventListener('mousemove', function(e){
+  const t = document.createElement('div');
+  t.className = 'trail';
+  t.style.left = e.pageX + 'px';
+  t.style.top = e.pageY + 'px';
+  t.innerHTML = '❤';
+  document.body.appendChild(t);
+  setTimeout(()=> t.remove(), 900);
+});
+
+/* ---------- SPARKLES (random) ---------- */
+setInterval(()=> {
+  const s = document.createElement('div');
+  s.className = 'sparkle';
+  s.style.left = Math.random()*window.innerWidth + 'px';
+  s.style.top = Math.random()*window.innerHeight + 'px';
+  document.body.appendChild(s);
+  setTimeout(()=> s.remove(), 900);
+}, 240);
+
+/* ---------- reveal intro after page load (optional focus) ---------- */
+window.addEventListener('load', function(){
+  // small accessibility: remove intro after 3.6s (handled by CSS animation),
+  // ensure any visible elements are focusable
+});
+
+/* ---------- small accessibility: pause heavy effects on reduced-motion */ 
+const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+if(mq.matches){
+  // stop sparkles quickly
+  // (we'll just not create new ones)
+}
+
+</script>
+</body>
+</html>

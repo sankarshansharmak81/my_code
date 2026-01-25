@@ -374,3 +374,70 @@ trial(n);
 //  cout << "round " << a << " / " << b << " = " << int((a*1.0/b) + 0.5) << endl;
 
 //  }
+
+
+
+
+
+// polotics
+//    long int t;
+//     cin >> t;
+
+//     while (t--) {
+//         int n, k;
+//     cin >> n >> k;
+//     string t[n];
+//     int ans = n;
+//     for(int i = 0; i < n; i++) {
+//         cin >> t[i];
+//         cout << t[i] << endl;
+//         if(t[i] != t[0]) {
+//             ans--;
+//         }
+//     }
+//     cout << ans << "\n";
+// }
+
+// cat problem
+
+//   long int n;
+//         string s;
+//         cin >> n >> s;
+
+//         // Convert to lowercase
+//         for (char &c : s) {
+//             c = tolower(c);
+//         }
+
+//         int i = 0;
+//         int len = s.length();
+
+//         if (s[i] != 'm') {
+//             cout << "NO" << endl;
+//             continue;
+//         }
+//         while (i < len && s[i] == 'm') i++;
+
+//         if (i >= len || s[i] != 'e') {
+//             cout << "NO" << endl;
+//             continue;
+//         }
+//         while (i < len && s[i] == 'e') i++;
+
+//         if (i >= len || s[i] != 'o') {
+//             cout << "NO" << endl;
+//             continue;
+//         }
+//         while (i < len && s[i] == 'o') i++;
+
+//         if (i >= len || s[i] != 'w') {
+//             cout << "NO" << endl;
+//             continue;
+//         }
+//         while (i < len && s[i] == 'w') i++;
+
+//         if (i == len) {
+//             cout << "YES" << endl;
+//         } else {
+//             cout << "NO" << endl;
+//         }

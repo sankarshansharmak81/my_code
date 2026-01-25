@@ -1,10 +1,13 @@
-import Counter from "./components/Counter";
+import UseEffect from "./components/useEffect";
 
 
 const App = () => {
-   return (
-   <Counter />
-   )
+
+  
+  return <section> 
+  
+   
+  </section>;
 };
 
 export default App;

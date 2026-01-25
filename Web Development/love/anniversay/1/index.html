@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 2-Year Anniversary!</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="flowers">
+    <span>🌸</span><span>🌺</span><span>🌼</span><span>💮</span><span>🌷</span>
+  </div>
+
+  <div class="container">
+    <h1>Happy 2-Year Anniversary, My Love ❤️</h1>
+    <img src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif" alt="Cute GIF" class="gif">
+    
+    <p class="message">
+      Two incredible years of laughter, endless hugs, and heart-to-heart conversations that stretch into the night. Thank you for being the one I get to share my world with. Every single day, my love for you grows deeper and stronger. You are my everything, and I cherish you more than words can say. 💖
+    </p>
+
+    <button onclick="showSurprise()">Click for a surprise 🎁</button>
+
+    <div id="surprise" style="display: none;">
+      <p>Here's our special playlist — songs that remind me of us 🎶</p>
+      <a href="https://open.spotify.com/playlist/6uvL46QFbCP8ZghKFix19c?si=63bbdb8f1350435d" target="_blank">💗 Listen to Our Playlist</a>
+    </div>
+
+    <!-- New Section for Song Recommendation -->
+    <div class="song-recommendation">
+      <h2>Here is a song recommendation for you 🎶</h2>
+      <p>Click below to play a song that reminds me of us, with all our beautiful memories. 🎧</p>
+      <button onclick="showMusicContainer()">Play Music</button>
+    </div>
+
+    <!-- Music Player (Initially Hidden) -->
+    <div class="music-container" style="display: none;">
+      <img src="/love/anniversay/1/1.jpg" alt="Background Image" class="background-image">
+      <button class="music-button" onclick="toggleMusic()">
+        <i class="fa fa-play"></i> Play
+      </button>
+    </div>
+
+    <audio id="bgMusic" loop>
+      <source src="/love/anniversay/1/videoplayback.mp3" type="audio/mpeg">  <!-- Make sure path is correct -->
+    </audio>
+    
+  </div>
+
+  <script src="script.js">
+  </script>
+
+</body>
+</html>

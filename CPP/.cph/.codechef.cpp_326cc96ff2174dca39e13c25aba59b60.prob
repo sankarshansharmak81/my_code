@@ -1,0 +1,1 @@
+{"name":"Local: codechef","url":"c:\\Users\\sanka\\Documents\\my_code\\CPP\\codechef.cpp","tests":[{"id":1768033768198,"input":"5\n5\napple\n15\nschtschurowskia\n6\npolish\n5\ntryst\n3\ncry\n","output":"YES\nNO\nYES\nNO\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\sanka\\Documents\\my_code\\CPP\\codechef.cpp","group":"local","local":true}

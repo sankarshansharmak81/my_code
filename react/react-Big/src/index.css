@@ -1,19 +1,22 @@
 *{
+    padding: 0;
+
+    margin: 0;
+    
     box-sizing: border-box;
 }
 
 body{
-    background: rgb(115, 56, 85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    
+  background: rgba(186, 33, 133, 0.527);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 h1{
-font-family: sans-serif;
-border: 2px solid #ccc;
-border-radius: 20px;
-padding: 20px;
+    font-family: sans-serif;
+
+    border: 2px solid #ccc;
+    padding: 20px;
 }

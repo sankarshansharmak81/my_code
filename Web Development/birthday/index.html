@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 19th Birthday, Yasmine!</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+  <style>
+    body {
+      font-family: 'Dancing Script', cursive;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ec2742, #9a2de8);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .popup {
+      background: rgba(81, 38, 38, 0.26);
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: popUp 1.5s forwards;
+    }
+
+    @keyframes popUp {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #dad6d6;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #ff6f61;
+      padding: 15px 30px;
+      border-radius: 12px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border: none;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e51d56;
+    }
+
+    /* Love Letter */
+    .love-letter {
+      display: none;
+      font-size: 1.5rem;
+      text-align: left;
+      padding: 20px;
+      margin-top: 50px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Photo Gallery */
+    .gallery {
+      display: none;
+      padding: 20px;
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .photo img {
+      width: 250px;
+      height: 250px;
+      border-radius: 15px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .photo img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Timeline */
+    .timeline {
+      display: none;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+    }
+
+    .event {
+      margin: 20px 0;
+    }
+
+    /* Surprise Section */
+    .surprise {
+      display: none;
+      padding: 20px;
+    }
+
+    #surpriseButton {
+      background-color: #ff61a6;
+      font-size: 1.5rem;
+      padding: 20px 40px;
+      border-radius: 25px;
+    }
+
+    #message h2 {
+      font-size: 2rem;
+      color: #ff61a6;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Cake Animation */
+    .cake-container {
+      margin-top: 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .cake {
+      position: relative;
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    .layer {
+      height: 60px;
+      border-radius: 10px;
+      margin: 5px 0;
+      background: linear-gradient(to bottom, #fbb1bd, #d26a7b);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+    }
+
+    .drip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 100%;
+      background: radial-gradient(#8b0000, #5e0000);
+      border-radius: 0 0 10px 10px;
+      z-index: 1;
+      opacity: 0;
+    }
+
+    .candles {
+      position: absolute;
+      top: -50px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      opacity: 0;
+    }
+
+    .candle {
+      width: 10px;
+      height: 40px;
+      background: linear-gradient(to top, #fff8dc, #e0c068);
+      border-radius: 2px;
+      position: relative;
+      box-shadow: 0 0 5px #e0c068;
+    }
+
+    .flame {
+      width: 12px;
+      height: 18px;
+      background: radial-gradient(circle at 50% 30%, #ffd700, #ff4500);
+      border-radius: 50%;
+      position: absolute;
+      top: -20px;
+      left: -1px;
+      animation: flicker 0.8s infinite alternate;
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+    }
+
+    #birthdayText {
+      margin-top: 30px;
+      font-size: 2rem;
+      color: #e91e63;
+      opacity: 0;
+    }
+
+    @keyframes flicker {
+      from { transform: scale(1); opacity: 1; }
+      to { transform: scale(1.2); opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+  <div id="envelope" class="envelope-animation">
+    <div id="birthdayCard" class="card">
+      <h1>Happy 19th Birthday, Yasmine! 💖</h1>
+      <button onclick="startLoveLetter()">Start Your Birthday Surprise</button>
+    </div>
+  </div>
+
+  <!-- Handwritten Love Letter -->
+  <div id="loveLetter" class="love-letter">
+    <p>My dearest Yasmine,</p>
+    <p>I can’t believe how quickly time has passed...</p>
+    <p>From the moment we met, I knew that my heart had found its home...</p>
+    <button onclick="showGallery()">Next: Our Gallery</button>
+  </div>
+
+  <!-- Photo Gallery -->
+  <div id="photoGallery" class="gallery">
+    <h2>Our Beautiful Moments</h2>
+    <div class="photos">
+      <div class="photo">
+        <img src="photo1.jpg" alt="Moment 1">
+        <p>Our first trip together 💕</p>
+      </div>
+      <div class="photo">
+        <img src="photo2.jpg" alt="Moment 2">
+        <p>That perfect evening under the stars 🌟</p>
+      </div>
+    </div>
+    <button onclick="showTimeline()">Next: Our Timeline</button>
+  </div>
+
+  <!-- Our Memories Timeline -->
+  <div id="timeline" class="timeline">
+    <h2>Our Journey Together</h2>
+    <div class="event">
+      <span class="date">1st Date: June 15, 2023</span>
+      <p>Our first dinner date, and the start of something beautiful. ❤️</p>
+    </div>
+    <button onclick="revealSurprise()">Next: Surprise!</button>
+  </div>
+
+  <!-- Surprise Section -->
+  <div id="surprise" class="surprise">
+    <button id="surpriseButton" onclick="playSong()">Don't Click Me! 😜</button>
+    <audio id="favoriteSong" loop>
+      <source src="your-favorite-song.mp3" type="audio/mp3">
+    </audio>
+    <div id="message">
+      <h2>You're the best part of my life, Yasmine. ❤️</h2>
+    </div>
+
+    <!-- Cake Animation -->
+    <div id="cakeAnimation" class="cake-container">
+      <div class="cake">
+        <div class="drip"></div>
+        <div class="layer bottom"></div>
+        <div class="layer middle"></div>
+        <div class="layer top"></div>
+        <div class="candles">
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+        </div>
+      </div>
+      <h2 id="birthdayText">🎂 Happy Birthday, Yasmine! 🎂</h2>
+    </div>
+  </div>
+
+  <script>
+    function startLoveLetter() {
+      document.getElementById('envelope').style.display = 'none';
+      document.getElementById('loveLetter').style.display = 'block';
+    }
+
+    function showGallery() {
+      document.getElementById('loveLetter').style.display = 'none';
+      document.getElementById('photoGallery').style.display = 'block';
+    }
+
+    function showTimeline() {
+      document.getElementById('photoGallery').style.display = 'none';
+      document.getElementById('timeline').style.display = 'block';
+    }
+
+    function revealSurprise() {
+      document.getElementById('timeline').style.display = 'none';
+      document.getElementById('surprise').style.display = 'block';
+      animateCake();
+    }
+
+    function playSong() {
+      const song = document.getElementById('favoriteSong');
+      song.play();
+      document.getElementById('message').style.display = 'block';
+    }
+
+    function animateCake() {
+      setTimeout(() => {
+        document.querySelector('.layer.bottom').style.opacity = '1';
+      }, 500);
+      setTimeout(() => {
+        document.querySelector('.layer.middle').style.opacity = '1';
+      }, 1000);
+      setTimeout(() => {
+        document.querySelector('.layer.top').style.opacity = '1';
+        document.querySelector('.drip').style.opacity = '1';
+      }, 1500);
+      setTimeout(() => {
+        document.querySelector('.candles').style.opacity = '1';
+      }, 2000);
+      setTimeout(() => {
+        document.getElementById('birthdayText').style.opacity = '1';
+      }, 3000);
+    }
+
+    // Falling petals (optional)
+    (function fallingFlowers() {
+      const flowers = ["🌸", "💐", "🌷", "🌺", "🌻"];
+      const flowerContainer = document.createElement('div');
+      flowerContainer.style.position = 'absolute';
+      flowerContainer.style.top = '0';
+      flowerContainer.style.left = '50%';
+      flowerContainer.style.zIndex = '-1';
+      document.body.appendChild(flowerContainer);
+
+      function createFlower() {
+        const flower = document.createElement('span');
+        flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+        flower.style.position = 'absolute';
+        flower.style.left = Math.random() * 100 + '%';
+        flower.style.fontSize = Math.random() * 20 + 20 + 'px';
+        flower.style.animation = 'falling 5s linear infinite';
+        flower.style.opacity = Math.random() + 0.3;
+        flowerContainer.appendChild(flower);
+      }
+
+      setInterval(createFlower, 1000);
+    })();
+  </script>
+</body>
+</html>

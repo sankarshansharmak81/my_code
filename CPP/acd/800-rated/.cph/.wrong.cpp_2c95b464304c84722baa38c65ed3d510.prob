@@ -1,0 +1,1 @@
+{"name":"Local: wrong","url":"c:\\Users\\sanka\\Documents\\my_code\\CPP\\acd\\800-rated\\wrong.cpp","tests":[{"id":1768135611326,"input":"512 4","output":"50"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\sanka\\Documents\\my_code\\CPP\\acd\\800-rated\\wrong.cpp","group":"local","local":true}
