@@ -1,0 +1,1 @@
+{"name":"Local: matrix","url":"c:\\Users\\sanka\\Documents\\my_code\\CPP\\acd\\800-rated\\matrix.cpp","tests":[{"id":1770081498661,"input":"0 0 0 0 0\n0 0 0 0 0\n0 0 0 0 0\n0 0 0 0 0\n0 0 1 0 0\n\n","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\sanka\\Documents\\my_code\\CPP\\acd\\800-rated\\matrix.cpp","group":"local","local":true}
