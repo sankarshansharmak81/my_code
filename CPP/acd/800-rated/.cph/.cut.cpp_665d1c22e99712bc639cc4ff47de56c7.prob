@@ -1,0 +1,1 @@
+{"name":"Local: cut","url":"c:\\Users\\sanka\\Documents\\my_code\\CPP\\acd\\800-rated\\cut.cpp","tests":[{"id":1770283378365,"input":"4\n6\n1 2 3 4 5 6\n4\n1 3 3 7\n3\n2 1 0\n5\n7 2 6 2 4\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\sanka\\Documents\\my_code\\CPP\\acd\\800-rated\\cut.cpp","group":"local","local":true}
